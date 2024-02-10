@@ -9,8 +9,6 @@ int column;
 
 int checkwin(int x)
 {
-if(x<9)// grid isnt full
-{
 if(sample[0][0]!=' ' && sample[0][0]==sample[0][1] && sample[0][1]==sample[0][2])// 1=2=3 and not empty
 return 1;
 else if(sample[0][0]!=' ' && sample[0][0]==sample[1][0] && sample[1][0]==sample[2][0])// 1=4=7 and not empty
@@ -27,11 +25,10 @@ else if(sample[0][0]!=' ' && sample[0][0]==sample[1][1] && sample[1][1]==sample[
 return 1;
 else if(sample[0][2]!=' ' && sample[0][2]==sample[1][1] && sample[1][1]==sample[2][0])// 3=5=7 and not empty
 return 1;
+else if(x>=9)// grid isnt full
+return -1;
 else
 return 0;// game continues
-}
-else
-return -1;//grid is full hence draw
 }
 
 void tictactoe(int count)
